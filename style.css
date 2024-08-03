@@ -47,6 +47,7 @@ body {
     color: #E9E6D0;
     display: flex;
     flex-direction: column;
+    padding-bottom: 20px; /* Add padding at the bottom */
 }
 
 .playlist-container h2 {
@@ -115,10 +116,22 @@ body {
     font-size: 12px; /* Adjust font size to make it smaller */
 }
 
+/* Hide scrollbar on desktop */
+@media (min-width: 768px) {
+    .playlist-container {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    }
+    .playlist-container::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
         align-items: center;
+        justify-content: center; /* Center the container */
     }
 
     .album-art img {
@@ -131,6 +144,7 @@ body {
         margin-top: 5px;
     }
 }
+
 
 
 
