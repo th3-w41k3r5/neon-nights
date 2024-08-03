@@ -44,14 +44,20 @@ document.querySelectorAll('.song').forEach((songElement) => {
 
     audio.addEventListener('loadedmetadata', updateTimer);
 
-    // Adding error event listener for debugging
     audio.addEventListener('error', (e) => {
-        console.error('Audio loading error', e);
+        console.error('Audio loading error:', e);
+        alert('Audio loading error: ' + e.message);
+
+        // Fallback URL for testing
+        audio.src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
+        audio.load();
+        audio.play();
     });
 
-    // Load the timer initially
     audio.addEventListener('loadeddata', updateTimer);
 });
+
+
 
 
 
