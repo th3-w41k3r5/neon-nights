@@ -46,10 +46,9 @@ document.querySelectorAll('.song').forEach((songElement) => {
 
     audio.addEventListener('error', (e) => {
         console.error('Audio loading error:', e);
-        alert('Audio loading error: ' + e.message);
 
         // Fallback URL for testing
-        audio.src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
+        audio.src = '';
         audio.load();
         audio.play();
     });
