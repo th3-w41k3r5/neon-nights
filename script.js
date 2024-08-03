@@ -43,7 +43,16 @@ document.querySelectorAll('.song').forEach((songElement) => {
     });
 
     audio.addEventListener('loadedmetadata', updateTimer);
+
+    // Adding error event listener for debugging
+    audio.addEventListener('error', (e) => {
+        console.error('Audio loading error', e);
+    });
+
+    // Load the timer initially
+    audio.addEventListener('loadeddata', updateTimer);
 });
+
 
 
 
