@@ -1,0 +1,15 @@
+{
+    "name": "neon-nights-ep",
+    "version": "1.0.0",
+    "description": "Neon Nights EP audio player",
+    "scripts": {
+      "build": "echo 'No build script specified'",
+      "start": "echo 'No start script specified'"
+    },
+    "dependencies": {
+      "node-fetch": "^2.6.1"
+    },
+    "author": "Your Name",
+    "license": "MIT"
+  }
+  
