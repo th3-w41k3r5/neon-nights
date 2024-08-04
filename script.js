@@ -13,7 +13,14 @@ document.querySelectorAll('.song').forEach((songElement) => {
         timer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')} / ${totalMinutes}:${totalSeconds.toString().padStart(2, '0')}`;
     };
 
-    playPauseBtn.addEventListener('click', () => {
+    const loadAudio = async () => {
+        const response = await fetch(audio.dataset.src);
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        audio.src = url;
+    };
+
+    playPauseBtn.addEventListener('click', async () => {
         document.querySelectorAll('.song').forEach((otherSongElement) => {
             const otherAudio = otherSongElement.querySelector('audio');
             const otherPlayPauseBtn = otherSongElement.querySelector('.play-pause img');
@@ -22,6 +29,10 @@ document.querySelectorAll('.song').forEach((songElement) => {
                 otherPlayPauseBtn.src = 'assets/play.svg';
             }
         });
+
+        if (!audio.src) {
+            await loadAudio();
+        }
 
         if (audio.paused) {
             audio.play();
@@ -46,15 +57,12 @@ document.querySelectorAll('.song').forEach((songElement) => {
 
     audio.addEventListener('error', (e) => {
         console.error('Audio loading error:', e);
-
-        // Fallback URL for testing
-        audio.src = '';
-        audio.load();
-        audio.play();
+        alert('Audio loading error: ' + e.message);
     });
 
     audio.addEventListener('loadeddata', updateTimer);
 });
+
 
 
 

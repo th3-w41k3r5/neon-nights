@@ -9,9 +9,6 @@
 </head>
 <body>
     <div class="background-overlay"></div>
-    <div class="watermark">
-        <p>PS W47K3R</p>
-    </div>
     <div class="container">
         <div class="album-art">
             <img src="assets/album-art.jpg" alt="Album Art">
@@ -23,7 +20,7 @@
                     <div class="song-details">
                         <span>Wake Up</span>
                         <div class="timer">0:00 / 0:00</div>
-                        <audio src="/.netlify/functions/getAudio?file=wake-up"></audio>
+                        <audio data-src="/.netlify/functions/getAudio?file=wake-up"></audio>
                     </div>
                     <div class="controls">
                         <button class="play-pause"><img src="assets/play.svg" alt="Play"></button>
@@ -33,8 +30,8 @@
                 <li class="song">
                     <div class="song-details">
                         <span>Beautiful Nightmare</span>
-                        <div class="timer">0:00 / 0:00</div>
-                        <audio src="/.netlify/functions/getAudio?file=beautiful-nightmare"></audio>
+                        <div class="timer">0:00 / 0:00"></div>
+                        <audio data-src="/.netlify/functions/getAudio?file=beautiful-nightmare"></audio>
                     </div>
                     <div class="controls">
                         <button class="play-pause"><img src="assets/play.svg" alt="Play"></button>
@@ -44,8 +41,8 @@
                 <li class="song">
                     <div class="song-details">
                         <span>Lifeline</span>
-                        <div class="timer">0:00 / 0:00</div>
-                        <audio src="/.netlify/functions/getAudio?file=lifeline"></audio>
+                        <div class="timer">0:00 / 0:00"></div>
+                        <audio data-src="/.netlify/functions/getAudio?file=lifeline"></audio>
                     </div>
                     <div class="controls">
                         <button class="play-pause"><img src="assets/play.svg" alt="Play"></button>
@@ -54,9 +51,9 @@
                 </li>
                 <li class="song">
                     <div class="song-details">
-                        <span>Club Leclerc (Racers Mix)</span>
-                        <div class="timer">0:00 / 0:00</div>
-                        <audio src="/.netlify/functions/getAudio?file=club-leclerc"></audio>
+                        <span>Club Leclerc</span>
+                        <div class="timer">0:00 / 0:00"></div>
+                        <audio data-src="/.netlify/functions/getAudio?file=club-leclerc"></audio>
                     </div>
                     <div class="controls">
                         <button class="play-pause"><img src="assets/play.svg" alt="Play"></button>
@@ -66,9 +63,13 @@
             </ul>
         </div>
     </div>
+    <footer>
+        <p>PS W47K3R</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
